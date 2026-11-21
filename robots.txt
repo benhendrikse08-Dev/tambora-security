@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://flytambora.com/sitemap.xml
