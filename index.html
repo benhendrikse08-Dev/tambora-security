@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tambora Security</title>
+<meta name="description" content="Tambora Security: autonomous drones that respond to alarms and give security teams eyes on the scene first. Launching 2027.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://security.flytambora.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tambora">
+<meta property="og:title" content="Tambora Security: every alarm deserves eyes, faster">
+<meta property="og:description" content="Autonomous drones that see what's happening before anyone arrives.">
+<meta property="og:image" content="https://security.flytambora.com/og.jpg">
+<meta property="og:url" content="https://security.flytambora.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1118">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: urgent but calm, a field report from the scene
+   IDEA: a green emergency banner, then a photo pinned beside the typed account
+   PICTURE: Tambora-green gradient banner with a framed title and a large outlined T; the paramedic photo in a tilted green print
+   COLOUR and TYPE: night ink page, Tambora greens from deep forest to bright mint, white; Inter light + bold titles, JetBrains Mono body
+   LAYOUT: logo bar, banner, lead paragraph, card + story, the drone, two phases, closing link back */
+:root{color-scheme:dark;--bg:#0B1118;--ink:#fff;--soft:rgba(255,255,255,.86);--mute:rgba(255,255,255,.58);--rule:rgba(255,255,255,.45);
+--g-deep:#0C2350;--g-night:#081736;--green:#2457A6;--g-mid:#2F6FD8;--green-hi:#5B8FE0;--mint:#A9C4FF;
+--s1:#2457A6;--s2:#1E9461;--s3:#F2B705;--s4:#7C5CFF}
+*{box-sizing:border-box;min-width:0;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+.page{max-width:1200px;margin:0 auto;padding:clamp(24px,4vw,48px) max(5vw,20px) clamp(48px,7vw,90px)}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:22px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.tm{display:inline-flex;flex-direction:column;gap:4px;width:34px}
+.tm svg{width:34px;height:auto;fill:#fff;display:block}
+.tm b{display:flex;gap:2px;height:4px}.tm b i{flex:1}
+.tm b i{background:var(--green)}.tm b i:nth-child(2){background:var(--g-mid)}.tm b i:nth-child(3){background:var(--green-hi)}.tm b i:nth-child(4){background:var(--mint)}
+.brand span{font-size:15px;font-weight:300;letter-spacing:.02em}
+.brand span strong{font-weight:700}
+.pw{font-size:13px;color:var(--soft);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 16px;text-decoration:none;transition:border-color .2s,background .2s}
+.pw b{color:#fff;font-weight:700}
+.pw:hover,.pw:focus-visible{border-color:#fff;background:rgba(255,255,255,.06);outline:none}
+
+/* banner */
+.banner{position:relative;overflow:hidden;border-radius:14px;min-height:clamp(340px,40vw,480px);display:flex;align-items:center;background:var(--g-night)}
+.banner .photo{position:absolute;inset:0 0 0 30%;background:url(banner.jpg) 75% 35%/cover no-repeat;z-index:0}
+.banner .photo:after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(24,50,120,.10) 0%,rgba(30,60,140,.22) 50%,rgba(30,60,140,.1) 100%);mix-blend-mode:multiply}
+.banner .shade{position:absolute;inset:0;z-index:1;background:radial-gradient(48% 75% at 0% 0%,rgba(200,215,240,.30),rgba(200,215,240,0) 70%),radial-gradient(70% 100% at 22% 105%,rgba(36,87,166,.5),rgba(36,87,166,0) 65%),linear-gradient(270deg,rgba(14,30,76,0) 0%,rgba(16,34,86,.08) 16%,rgba(18,40,100,.42) 32%,rgba(16,36,92,.86) 46%,#142A66 54%,#173276 76%,#1D4290 100%)}
+.banner .frame{position:absolute;right:42%;left:clamp(40px,5vw,72px);top:clamp(26px,4vw,46px);bottom:clamp(26px,4vw,46px);border:1px solid rgba(255,255,255,.7);border-left:0;border-radius:2px;pointer-events:none;z-index:2}
+.banner .frame:after{content:"";position:absolute;left:0;top:-1px;width:30%;border-top:1px solid rgba(255,255,255,.7)}
+.banner .txt{position:relative;z-index:3;margin-left:clamp(28px,6vw,88px);max-width:560px;padding:clamp(48px,7vw,80px) clamp(28px,4vw,48px)}
+.banner .k{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--mint)}
+.banner h1{font-size:clamp(36px,4.6vw,58px);line-height:1.02;letter-spacing:-.02em;margin-top:14px;text-wrap:balance}
+.banner h1 .l{display:block;font-weight:300}
+.banner h1 .b{display:block;font-weight:800}
+.banner .sub{font-size:clamp(16px,1.6vw,19px);margin-top:18px;color:rgba(255,255,255,.9);max-width:34ch}
+.bigT{position:absolute;left:26px;bottom:26px;height:64px;width:auto;fill:none;stroke:var(--green-hi);stroke-width:5;z-index:3}
+
+/* lead + intro */
+.lead{font-size:clamp(20px,2.2vw,25px);line-height:1.5;text-wrap:pretty}
+.lead2{font-size:17px;line-height:1.75;color:var(--soft);margin-top:20px;max-width:60ch}
+.lead strong{color:var(--green-hi);font-weight:700}
+.intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(36px,6vw,72px);margin-top:clamp(44px,6vw,68px);align-items:center}
+.card{background:radial-gradient(75% 70% at 100% 100%,rgba(30,148,97,.55),rgba(30,148,97,0) 70%),radial-gradient(50% 45% at 0% 0%,rgba(169,196,255,.25),rgba(169,196,255,0) 70%),var(--green);padding:clamp(16px,2.2vw,26px) clamp(16px,2.2vw,26px) 20px;border-radius:4px;box-shadow:0 30px 60px rgba(0,0,0,.5);transform:rotate(-1.2deg);animation:settle 1s cubic-bezier(.2,.7,.2,1) both}
+.card img{display:block;width:100%;height:auto;aspect-ratio:4/3.4;object-fit:cover;background:#13202a}
+.card figcaption{font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:700;margin-top:16px}
+@keyframes settle{from{transform:rotate(-4deg) translateY(14px);opacity:0}to{transform:rotate(-1.2deg);opacity:1}}
+@media (prefers-reduced-motion:reduce){.card{animation:none}}
+.where{font-size:13px;color:var(--mute);margin-top:22px}
+.kick{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-hi);font-weight:600}
+h2{font-size:clamp(28px,3.2vw,38px);line-height:1.08;letter-spacing:-.015em;font-weight:800;margin:12px 0 22px;text-wrap:balance}
+.mono p,.phase p{font-family:"JetBrains Mono",monospace;font-size:15px;line-height:1.8;color:var(--soft);max-width:62ch}
+.mono p+p,.phase p+p{margin-top:18px}
+.btn{display:inline-flex;align-items:center;min-height:48px;margin-top:32px;background:#fff;color:var(--bg);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:0 30px;border-radius:4px;text-decoration:none;transition:transform .2s}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);outline:2px solid var(--green-hi);outline-offset:3px}
+
+/* the drone */
+.drone{margin-top:clamp(56px,8vw,90px);padding-top:clamp(36px,5vw,50px);border-top:1px solid var(--rule)}
+.drone .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,72px);align-items:end}
+.specs{margin-top:clamp(28px,4vw,40px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:10px;overflow:hidden}
+.spec{background:var(--bg);padding:24px 22px 26px}
+.spec .n{font-size:13px;font-weight:700;color:var(--green-hi);letter-spacing:.04em}
+.spec h3{font-size:19px;font-weight:700;margin:8px 0 8px;letter-spacing:-.01em}
+.spec p{font-family:"JetBrains Mono",monospace;font-size:14px;line-height:1.7;color:var(--soft)}
+
+/* phases */
+.phase .punch{font-family:Inter,sans-serif;font-size:clamp(19px,2vw,22px);line-height:1.45;font-weight:700;color:#fff;margin-top:26px;padding-left:16px;border-left:3px solid var(--green-hi)}
+.phases{margin-top:clamp(56px,8vw,90px);padding-top:clamp(36px,5vw,50px);border-top:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,72px)}
+
+/* end */
+.end{margin-top:clamp(56px,8vw,90px);padding-top:clamp(36px,5vw,50px);border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.visit{font-size:clamp(30px,4vw,42px);font-weight:800;letter-spacing:-.02em;text-decoration:none;line-height:1.1}
+.visit span{color:var(--green-hi)}
+.visit i{font-style:normal;display:inline-block;transition:transform .2s}
+.visit:hover i,.visit:focus-visible i{transform:translateX(6px)}
+.visit:focus-visible{outline:2px solid var(--green-hi);outline-offset:6px}
+.mail{font-size:14px;color:var(--mute)}
+.mail a{color:var(--soft)}
+.foot{margin-top:40px;font-size:13px;color:rgba(255,255,255,.4)}
+
+@media (max-width:860px){
+ .intro,.phases,.drone .head{grid-template-columns:minmax(0,1fr)}
+ .specs{grid-template-columns:minmax(0,1fr)}
+ .card{max-width:560px}
+ .banner{flex-direction:column;align-items:stretch;min-height:0}
+ .banner .photo{position:relative;inset:auto;height:260px;background-position:30% center}
+ .banner .shade{background:linear-gradient(180deg,rgba(8,23,54,0) 0%,rgba(8,23,54,0) 180px,var(--g-night) 262px)}
+ .banner .frame{left:16px;right:16px;top:240px;bottom:16px}
+ .banner .txt{margin-left:0;padding:36px 32px 44px}
+ .bigT{height:44px;left:auto;right:22px;bottom:22px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+ <header class="top">
+  <a class="brand" href="https://flytambora.com" aria-label="Tambora">
+   <span class="tm"><svg viewBox="22 34 156 142" aria-hidden="true"><path d="M22 34H93V176H67V62H22Z M107 34H178V62H133V176H107Z"/></svg><b><i></i><i></i><i></i><i></i></b></span>
+   <span>Tambora <strong>Security</strong></span>
+  </a>
+  <a class="pw" href="https://flytambora.com">Powered by <b>FlyTambora.com</b> ↗</a>
+ </header>
+
+ <section class="banner" aria-label="Tambora Security">
+  <div class="photo" role="img" aria-label="A security officer in a black uniform patrolling along a perimeter fence"></div><div class="shade" aria-hidden="true"></div><div class="frame" aria-hidden="true"></div>
+  <svg class="bigT" viewBox="20 32 160 146" aria-hidden="true"><path d="M22 34H93V176H67V62H22Z M107 34H178V62H133V176H107Z"/></svg>
+  <div class="txt">
+   <h1><span class="l">Every alarm deserves</span><span class="b">eyes, faster.</span></h1>
+   <p class="sub">Autonomous drones that see what's happening before anyone arrives.</p>
+  </div>
+ </section>
+
+ <section class="intro">
+  <div class="leadwrap">
+   <p class="lead">When an alarm goes off, the first few minutes decide what happens next, and too often guards arrive without knowing what they're walking into. <strong>Our security mission is to become a fully autonomous partner to security teams: first on the scene, and giving every responder eyes on the situation before they arrive.</strong></p>
+   <p class="lead2">It starts with the sites that matter most: estates, business parks, warehouses and critical infrastructure. When an alarm is triggered or the drone spots something out of place, it flies straight to the spot, streams live video to the control room and the responding team, and records everything as it happens.</p>
+  </div>
+  <div>
+   <figure class="card">
+    <img src="card.jpg" alt="A security officer reviewing notes on a clipboard in a control room corridor" width="1673" height="940">
+    <figcaption>Every second after an alarm counts.</figcaption>
+   </figure>
+   <p class="where">First deployments · 2027</p>
+  </div>
+ </section>
+
+ <section class="drone">
+  <div class="head">
+   <div><div class="kick">The drone</div><h2>Built to get there first.</h2></div>
+   <div class="mono"><p>Every Tambora drone is designed and built by us in South Africa, and flown by TamboraAI, the brain that lets it fly itself and understand what's happening on the ground. It doesn't wait for a guard to drive over. It's already in the air.</p></div>
+  </div>
+  <div class="specs">
+   <div class="spec"><div class="n">Always on</div><h3>Patrols 24/7</h3><p>Flies its site day and night. When its battery runs low, it lands on a rooftop dock that swaps the battery automatically and sends it straight back up.</p></div>
+   <div class="spec"><div class="n">Sees</div><h3>Eyes that never blink</h3><p>Watches fences, gates and open ground in the dark, with thermal vision. It knows what a normal night looks like, so anything out of place stands out straight away.</p></div>
+   <div class="spec"><div class="n">Responds</div><h3>First to every alarm</h3><p>When an alarm triggers, it's over the spot in moments, so the control room can see whether it's a real threat or a false alarm before anyone is sent.</p></div>
+   <div class="spec"><div class="n">Reports</div><h3>Live to the people who need it</h3><p>Streams a live feed to the control room and the responding team, so guards know exactly what they're walking into, and records everything as evidence.</p></div>
+   <div class="spec"><div class="n">Supervised</div><h3>Safe by design</h3><p>Flies itself, overseen by licensed remote pilots who can step in at any moment. Every flight follows South African aviation rules, and people not involved in an incident are blurred.</p></div>
+   <div class="spec"><div class="n">Learns</div><h3>Smarter every flight</h3><p>What one drone learns today, every drone knows tomorrow. Each patrol teaches TamboraAI more about the sites it protects.</p></div>
+  </div>
+ </section>
+
+ <section class="phases">
+  <div class="phase">
+   <div class="kick">Where we start</div>
+   <h2>Eyes on every alarm.</h2>
+   <p>We start by making sure no alarm goes unchecked. Our first security drones deploy in 2027, patrolling the sites they protect day and night and flying to every alarm the moment it's triggered.</p>
+   <p>Control rooms see the scene live before anyone is sent, so false alarms are cleared in seconds and real ones get the right response straight away. Guards arrive knowing how many people are there, where they went and what they're facing. Every flight also teaches TamboraAI more about the places it protects.</p>
+  </div>
+  <div class="phase">
+   <div class="kick">Where we're going</div>
+   <h2>Safer streets, before anything happens.</h2>
+   <p>Today, most security is reactive: something happens, an alarm goes off, and someone drives over to check. We're building towards a South Africa where help is already watching, and trouble is stopped before it starts.</p>
+   <p>First, connected networks of drones that cover whole neighbourhoods and business districts together, sharing what they see so a threat spotted in one place is tracked across the next.</p>
+   <p>Then, drones that do more than watch: lighting up a scene, speaking to people on the ground, and guiding responders straight to where they're needed, so every guard, every community and every business is better protected.</p>
+   <p class="punch">Every drone we fly today brings that future closer. Our goal is simple: everyone in South Africa should feel safe where they live and work.</p>
+  </div>
+ </section>
+
+ <footer class="end" id="contact">
+  <a class="visit" href="https://flytambora.com">Visit <span>FlyTambora.com</span> <i>→</i></a>
+  <p class="mail">Or get in touch: <a href="mailto:ben@flytambora.com">ben@flytambora.com</a></p>
+ </footer>
+ <p class="foot">© 2026 Tambora Technologies (Pty) Ltd · South Africa</p>
+</main>
+</body>
+</html>
